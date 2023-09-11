@@ -1,11 +1,20 @@
+import { Suspense } from "react";
+import Info from "@/app/components/info";
+import Link from "next/link";
+import InfoDetails from "@/app/components/infoDetails";
 
-const ItemPage = ( {params : { name }} ) => {
+const InfoPage = ( {params : { name }} ) => {
   return (
     <div className="card">
-        <h2>{name}</h2>
-        <p>Repo Details</p>
+        <Link href="/info/code" className="btn btn-back">Back to code</Link>
+        <Suspense fallback={<div>Loading...</div>}>
+        <Info name={name}/>
+        </Suspense>
+        <Suspense fallback={<div>Loading directories...</div>}>
+        <InfoDetails name={name}/>
+        </Suspense>
     </div>
   );
 };
 
-export default ItemPage
+export default InfoPage;
