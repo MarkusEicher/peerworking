@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { FaStar, FaCodeBranch, FaEye } from "react-icons/fa";
 
+export const metadata = {
+    title: "peerworking.ch's GitHub Repos",
+    description: 'SEO optimized description goes here',
+    keywords: 'open source, training, coaching, peerworking, healthcare, mental health'
+  }
+
 async function fetchRepos() {
     const response = await fetch(
         'https://api.github.com/users/MarkusEicher/repos', 

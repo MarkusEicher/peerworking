@@ -6,7 +6,7 @@ import InfoDetails from "@/app/components/infoDetails";
 const InfoPage = ( {params : { name }} ) => {
   return (
     <div className="card">
-        <Link href="/info/code" className="btn btn-back">Back to code</Link>
+        <Link href="/info/code" className="btn btn-back">Back to GitHub</Link>
         <Suspense fallback={<div>Loading...</div>}>
         <Info name={name}/>
         </Suspense>

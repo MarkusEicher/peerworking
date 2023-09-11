@@ -16,7 +16,9 @@ const InfoDetails = async ({ name }) => {
         <h3>Directories</h3>
         <ul>
             {details.map((content) => (
+                
                 <li key={details.path}>
+                    
                     <Link href={`/info/code/${content.path}`}>
                         {content.path}
                     </Link>
