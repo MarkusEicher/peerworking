@@ -1,5 +1,11 @@
+import { Asap } from 'next/font/google';
+import Header from './components/header';
 import './globals.css'
 
+const fntAsap = Asap({
+  weight: ['400', '800'],
+  subsets: ['latin'],
+});
 
 export const metadata = {
   title: 'peerworking.ch',
@@ -10,7 +16,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={fntAsap.className}>
+        <Header />
+        <main className='container'>{children}</main>
+      </body>
     </html>
   )
 }
